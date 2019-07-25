@@ -16,13 +16,13 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false|
+|username|string|null: false, unique: true|
 ### Association
 - has_many :members
 - has_many :groups, through: :members
-- has_many :posts
+- has_many :comments
 
 
 ## groupテーブル
@@ -31,7 +31,7 @@
 |groupname|text|null: false|
 ### Association
 - has_many :users, through: :members
-- has_many  :posts
+- has_many :comments
 
 
 
