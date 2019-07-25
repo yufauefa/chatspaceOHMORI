@@ -18,28 +18,29 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 ### Association
 - has_many :members
 - has_many :groups, through: :members
 - has_many :comments
 
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|text|null: false|
+|name|text|null: false|
 ### Association
 - has_many :users, through: :members
 - has_many :comments
+- has_many :members
 
 
 
-## commentテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|text|
+|text|text|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
