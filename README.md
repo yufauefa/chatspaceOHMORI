@@ -13,14 +13,12 @@
 - belongs_to :group
 - belongs_to :user
 
-
-##usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
-
 ### Association
 - has_many :members
 - has_many :groups, through: :members
