@@ -1,0 +1,38 @@
+.flash_box
+  文字を書きました
+
+.chatside
+  .chatside__header
+    %p.chatside__header--name グループ名
+    %ul.chatside__header__menu
+      =link_to "https://chat-space-proto.herokuapp.com/groups/new" do
+        %i.fa.fa-edit
+      =link_to "https://chat-space-proto.herokuapp.com/users/910/edit" do
+        %i.fa.fa-cog
+
+  .chatside__groups
+    %p.chatside__groups--name
+      他のグループ名
+    %p.chatside__groups--subtitle
+      説明
+
+.chatmain
+  .chatmain__header
+    .chatmain__header__group
+      %p.chatmain__header__group--title TEST
+      %li.chatmain__header__group--member member=aaabbb
+    =link_to "https://chat-space-proto.herokuapp.com/users/910/edit",  class: "chatmain__header__btn" do
+      Edit
+
+  .chatmain__messages
+    .chatmain__messages__message
+      %p.chatmain__messages__message--user ユーザー名
+      %p.chatmain__messages__message--date 2019-1-1
+    %p.chatmain__messages--text テキスト入ります
+
+  .chatmain__form
+    %form.chatmain__form__newmessage
+      .chatmain__form__newmessage--box type a message
+      .chatmain__form__newmessage--label
+        %i.fa.fa-image
+    .chatmain__form__btn Send
