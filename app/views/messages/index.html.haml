@@ -1,32 +1,32 @@
 .flash_box
-  文字を書きました
+  %p グループを作成しました
 
 .chatside
   .chatside__header
     %p.chatside__header--name グループ名
-    %ul.chatside__header__menu
-      =link_to "https://chat-space-proto.herokuapp.com/groups/new" do
-        %i.fa.fa-edit
-      =link_to "https://chat-space-proto.herokuapp.com/users/910/edit" do
-        %i.fa.fa-cog
+    %ul
+      =link_to "https://chat-space-proto.herokuapp.com/groups/new",class: "chatside__header__menu" do
+        %i.fa.fa-edit{:style => "color:white;"}
+      =link_to "https://chat-space-proto.herokuapp.com/users/910/edit", class: "chatside__header__menu" do
+        %i.fa.fa-cog{:style => "color:white;"}
 
   .chatside__groups
     %p.chatside__groups--name
-      他のグループ名
+      test-group
     %p.chatside__groups--subtitle
-      説明
+      さようなら
 
 .chatmain
   .chatmain__header
     .chatmain__header__group
-      %p.chatmain__header__group--title TEST
+      %p.chatmain__header__group--title TEST Group
       %li.chatmain__header__group--member member=aaabbb
     =link_to "https://chat-space-proto.herokuapp.com/users/910/edit",  class: "chatmain__header__btn" do
       Edit
 
   .chatmain__messages
     .chatmain__messages__message
-      %p.chatmain__messages__message--user ユーザー名
+      %p.chatmain__messages__message--user testユーザー名
       %p.chatmain__messages__message--date 2019-1-1
     %p.chatmain__messages--text テキスト入ります
 
