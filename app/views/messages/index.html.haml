@@ -1,38 +1,31 @@
-.flash_box
-  %p グループを作成しました
+.wrapper
 
-.chatside
-  .chatside__header
-    %p.chatside__header--name グループ名
-    %ul
-      =link_to "https://chat-space-proto.herokuapp.com/groups/new",class: "chatside__header__menu" do
-        %i.fa.fa-edit
-      =link_to "https://chat-space-proto.herokuapp.com/users/910/edit", class: "chatside__header__menu" do
-        %i.fa.fa-cog
+  = render '/devise/shared/side_bar'
 
-  .chatside__groups
-    %p.chatside__groups--name
-      test-group
-    %p.chatside__groups--subtitle
-      さようなら
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      = render @messages
 
-.chatmain
-  .chatmain__header
-    .chatmain__header__group
-      %p.chatmain__header__group--title TEST Group
-      %li.chatmain__header__group--member member=aaabbb
-    =link_to "https://chat-space-proto.herokuapp.com/users/910/edit",  class: "chatmain__header__btn" do
-      Edit
-
-  .chatmain__messages
-    .chatmain__messages__message
-      %p.chatmain__messages__message--user testユーザー名
-      %p.chatmain__messages__message--date 2019-1-1
-    %p.chatmain__messages--text テキスト入ります
-
-  .chatmain__form
-    %form.chatmain__form__newmessage
-      .chatmain__form__newmessage--box type a message
-      .chatmain__form__newmessage--label
-        %i.fa.fa-image
-    .chatmain__form__btn Send
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
