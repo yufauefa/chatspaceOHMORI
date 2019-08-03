@@ -12,16 +12,14 @@ $(function(){
     <div class="lower-message">
     <p class="lower-message__content">
     ${message.content}
-    </p>
-    ${message.image}
+    </p> 
+    <div class="lower-message__image">
+    <img src= "${message.image}">
+    </div>
     </div>
     </div>`
     return html;
   }
-
-
-
-
 
 
   $('#new_message').on('submit', function(e){
@@ -38,7 +36,8 @@ $(function(){
       contentType: false,
     })
     .done(function(message){
-      console.log(message);
+      var html = buildMessage(message);
+      $('.messages').append(html);
     })
     .fail(function(){
 
