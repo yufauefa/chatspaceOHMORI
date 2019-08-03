@@ -12,7 +12,6 @@ $(function(){
     <div class="lower-message">
     <p class="lower-message__content">
     ${message.content}
-    <img class="lower-message__image" src="/uploads/message/image/${params[:id]/${message.image}">
     </p>
     </div>
     </div>`
@@ -36,8 +35,12 @@ $(function(){
     .done(function(message){
       var html = buildMessage(message);
       $('.messages').append(html);
+      $('#message_content').val('')
+      $('.form__submit').removeAttr('disabled');
+      $('.messages').animate({ scrollTop: $('#message')[0].scrollHeight});
     })
     .fail(function(){
-    })
+      alert('error');
+    });
   });
 });
