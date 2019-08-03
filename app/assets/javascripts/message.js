@@ -1,6 +1,6 @@
 $(function(){
   function buildMessage(message){
-    var MessageImage = (message.image) ? ${message.image} : ''
+    var MessageImage = (message.image) ? message.image : ''
     var html = `<div class="message">
     <div class="upper-message">
     <div class="upper-message__user-name">
@@ -14,7 +14,7 @@ $(function(){
     <p class="lower-message__content">
     ${message.content}
     </p>
-    <img class="lower-message__image" src=$${MessageImage}>
+    <img class="lower-message__image" src=${MessageImage}>
     </div>
     </div>`
     return html;
