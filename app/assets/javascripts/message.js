@@ -12,7 +12,7 @@ $(function(){
     <div class="lower-message">
     <p class="lower-message__content">
     ${message.content}
-    <img src= "${message.image}" alt = none>
+    <img class="lower-message__image" src="/uploads/message/image/${params[:id]/${message.image}">
     </p>
     </div>
     </div>`
@@ -38,7 +38,6 @@ $(function(){
       $('.messages').append(html);
     })
     .fail(function(){
-
     })
   });
 });
