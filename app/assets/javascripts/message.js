@@ -37,8 +37,9 @@ $(function(){
     .done(function(message){
       var html = buildMessage(message);
       $('.messages').append(html);
-      $('#message_content').val('')
       $('.form__submit').removeAttr('disabled');
+      $('#message_content').val('')
+      $('#message_image').val('')
       $('.messages').animate({ scrollTop: $('#message')[0].scrollHeight},sokudo);
     })
     .fail(function(){
