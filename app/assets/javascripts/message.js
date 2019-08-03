@@ -40,7 +40,7 @@ $(function(){
       $('.form__submit').removeAttr('disabled');
       $('#message_content').val('')
       $('#message_image').val('')
-      $('.messages').animate({ scrollTop: $('#message')[0].scrollHeight},sokudo);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},1000);
     })
     .fail(function(){
       alert('error');
