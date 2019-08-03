@@ -12,10 +12,8 @@ $(function(){
     <div class="lower-message">
     <p class="lower-message__content">
     ${message.content}
-    </p> 
-    <div class="lower-message__image">
-    <img src= "${message.image}">
-    </div>
+    <img src= "${message.image}" alt = none>
+    </p>
     </div>
     </div>`
     return html;

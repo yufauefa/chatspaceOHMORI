@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @group.messages.new(message_params)
+    @message = @group.messages.new(content: message_params[:content], image: message_params[:image], user_id: current_user.id)
     if @message.save
     respond_to do |format|
       format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました' }
