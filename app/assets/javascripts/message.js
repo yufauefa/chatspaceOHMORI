@@ -38,9 +38,8 @@ $(function(){
       var html = buildMessage(message);
       $('.messages').append(html);
       $('.form__submit').removeAttr('disabled');
-      $('#message_content').val('')
-      $('#message_image').val('')
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},0);
+      $('#new_message')[0].reset();
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},);
     })
     .fail(function(){
       alert('error');
