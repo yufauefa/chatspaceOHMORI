@@ -20,7 +20,7 @@
       }
       .icon {
         color: whitesmoke;
-        font-size: 12px;
+        font-size: 20px;
       }
     }
   }
@@ -31,15 +31,15 @@
     padding: 0 20px;
     .group {
       box-sizing: border-box;
-      padding: 20px 0 40px;
+      padding: 20px 0 40px 0;
       &__name {
         color: white;
-        font-size: 12px;
+        font-size: 18px;
       }
       &__message {
-        color: white;
+        color: gray;
         font-size: 12px;
-        margin-top: 5px;
+        margin-top: 10px;
       }
     }
   }
