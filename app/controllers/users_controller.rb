@@ -10,6 +10,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:]}")
+  end
+
+
+
+
   private
 
   def user_params
