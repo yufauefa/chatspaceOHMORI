@@ -5,15 +5,14 @@ $(function() {
                   <p class="chat-group-user__name">${user.name}</p>
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                 </div>`
-    $('.edit_group').append(html);
+    return html;
   }
 
 
 
 
-  $('#user-search-field').on('keydown', function(){
+  $('#user-search-field').on('keyup', function(){
     var input = $('#user-search-field').val();
-    var reg = new RegExp("^" + input );
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -22,7 +21,8 @@ $(function() {
     })
     .done(function(users){
       users.forEach(function(user){
-        appendUser(user);
+        var html = appendUser(user);
+        $('#user-search-result').append(html);
       });
     })
     .fail(function(){
