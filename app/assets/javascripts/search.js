@@ -41,15 +41,7 @@ $(function() {
     })
   });
 
-  // $('#user-search-field').on('keyup', function(){
-  //   if (users !== 0 ){
-  //     search(users);
-  //   }
-  //   else{
-  //   function(){
-  //     alert('error');
-  //   }
-  // });
+
 
   function appendUserName(name, id){
     var html =`<div class='chat-group-user'>
@@ -63,8 +55,8 @@ $(function() {
 
 
   $('#user-search-result').on('click', '.user-search-add', function(){
-    var name = $(this).attr('data-user-name');
-    var id = $(this).attr('.data-user-id');
+    var name = $(this).data('user-name');
+    var id = $(this).data('user-id');
     $(this).parent().remove();
     var html = appendUserName(name, id);
     $('#group_member_add').append(html);
