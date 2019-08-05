@@ -69,10 +69,9 @@ $(function() {
     var html = appendUserName(name, id);
     $('#group_member_add').append(html);
   });
-
-
-
-
+  $('#group_member_add').on('click', '.user-search-remove', function(){
+    $(this).parent().remove();
+  });
 
 });
 
