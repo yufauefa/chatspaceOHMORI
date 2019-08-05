@@ -51,13 +51,23 @@ $(function() {
   //   }
   // });
 
+  function appendUserName(name, id){
+    var html =`<div class='chat-group-user'>
+    <input name='group[user_ids][]' type='hidden' value='${id}'>
+    <p class='chat-group-user__name'>${name}</p>
+    <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+    </div>`
+    return html;
+  }
 
 
 
-
-
-  $('#tsuika').on('click', function(){
-    console.log("追加ボタン押されました")
+  $('#user-search-result').on('click', '.user-search-add', function(){
+    var name = $(this).attr('data-user-name');
+    var id = $(this).attr('.data-user-id');
+    $(this).parent().remove();
+    var html = appendUserName(name, id);
+    $('#group_member_add').append(html);
   });
 
 
