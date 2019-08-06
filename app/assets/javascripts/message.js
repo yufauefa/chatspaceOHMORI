@@ -77,8 +77,7 @@ $(function(){
       var messageBody = message.content ? message.content : '';
       var messageImage = massage.image.url? `<img src="${message.image.url}" class="lower-message__image">` : '';
       //data-idが反映されるようにしている
-      var html = (message.content && message.image.url)?
-      `<div class="message" data-id=  ${message.id}  > 
+      var html = `<div class="message" data-id=  ${message.id}  > 
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name} 
@@ -89,43 +88,12 @@ $(function(){
         </div> 
         <div class="lower-message">
           <p class="lower-message__content"> 
-            ${message.Body} 
+            ${messageBody} 
           </p> 
-          ${messageImage} 
+            ${messageImage} 
         </div>
-      </div>`
-      : (message.content)?
-      //同様に、data-idが反映されるようにしている
-      `<div class="message" data-id= ${message.id}  >
-        <div class="upper-message">
-          <div class="upper-message__user-name">
-            ${message.user_name} 
-          </div>
-          <div class="upper-message__date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="lower-message">
-          <p class="lower-message__content">
-            ${messageBody}
-          </p>
-        </div>
-      </div>`
-      //同様に、data-idが反映されるようにしている
-      :`<div class="message" data-id= ${message.id} >
-        <div class="upper-message">
-          <div class="upper-message__user-name">' +
-            ${message.user_name}
-          </div>
-          <div class="upper-message__date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="lower-message">
-          ${messageImage}
-        </div>
-      </div>`;
-    return html;
+        </div>`
+      return html;
   };
   setInterval(reloadMessages, 5000);
 });
