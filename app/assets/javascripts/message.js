@@ -45,13 +45,11 @@ $(function(){
       alert('error');
     });
   });
-});
-$(function(){
 
   var reloadMessages = function() {
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    last_message_id = $('.message').data('id');
+    var last_message_id = $('.message:last').data('id');
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: "api/messages",
@@ -64,7 +62,7 @@ $(function(){
     .done(function(messages) {
       var insertHTML = '';
       messages.forEach(function(message){
-        insertHTML=buildMessage(message);
+        insertHTML=buildMessageHTML(message);
         $('.messages').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},);
       })
