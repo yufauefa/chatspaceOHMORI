@@ -74,9 +74,9 @@ $(function(){
   };
 
   var buildMessageHTML = function(message) {
-    if (message.content && message.image.url) {
       //data-idが反映されるようにしている
-      var html = `<div class="message" data-id=  ${message.id}  > 
+      var html = (message.content && message.image.url)?
+      `<div class="message" data-id=  ${message.id}  > 
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name} 
@@ -92,9 +92,9 @@ $(function(){
           <img src="  ${message.image.url}  " class="lower-message__image" > 
         </div>
       </div>`
-    } else if (message.content) {
+      : (message.content)?
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-id= ${message.id}  >
+      `<div class="message" data-id= ${message.id}  >
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name} 
@@ -109,9 +109,8 @@ $(function(){
           </p>
         </div>
       </div>`
-    } else if (message.image.url) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class="message" data-id= ${message.id} >
+      :`<div class="message" data-id= ${message.id} >
         <div class="upper-message">
           <div class="upper-message__user-name">' +
             ${message.user_name}
@@ -123,8 +122,7 @@ $(function(){
         <div class="lower-message">
           <img src="  ${message.image.url} " class="lower-message__image" >
         </div>
-      </div>`
-    };
+      </div>`;
     return html;
   };
   setInterval(reloadMessages, 5000);
