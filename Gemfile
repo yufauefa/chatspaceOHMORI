@@ -68,3 +68,8 @@ gem 'devise'
 # 画像管理システム
 gem 'carrierwave'
 gem 'mini_magick'
+
+# ユニコーン
+group :production do
+  gem 'unicorn', '5.4.1'
+end
