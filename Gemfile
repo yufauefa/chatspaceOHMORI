@@ -73,6 +73,7 @@ gem 'devise'
 # 画像管理システム
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 
 # ユニコーン
 group :production do

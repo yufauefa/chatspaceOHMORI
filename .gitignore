@@ -17,3 +17,4 @@
 .byebug_history
 chat-space-ohmori/
 public/uploads/*
+config/secrets.yml
