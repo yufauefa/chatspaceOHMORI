@@ -14,7 +14,7 @@ $(function(){
     <p class="lower-message__content">
     ${message.content}
     </p>
-    <img class="lower-message__image" src=${MessageImage}>
+    <img class="lower-message__image" src="${MessageImage}">
     </div>
     </div>`
     return html;
