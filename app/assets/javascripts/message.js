@@ -14,7 +14,7 @@ $(function(){
     <p class="lower-message__content">
     ${message.content}
     </p>
-    <img class="lower-message__image" src=${MessageImage}>
+    <img class="lower-message__image" src="${MessageImage}">
     </div>
     </div>`
     return html;
@@ -75,7 +75,7 @@ $(function(){
 
   var buildMessageHTML = function(message) {
       var messageBody = message.content ? message.content : '';
-      var messageImage = massage.image.url? `<img src="${message.image.url}" class="lower-message__image">` : '';
+      var messageImage = massage.image ? `<img src="${message.image}" class="lower-message__image">` : '';
       //data-idが反映されるようにしている
       var html = `<div class="message" data-id=  ${message.id}  > 
         <div class="upper-message">
