@@ -46,6 +46,8 @@ $(function(){
     });
   });
 
+
+
   var reloadMessages = function() {
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
@@ -65,7 +67,7 @@ $(function(){
         insertHTML=buildMessageHTML(message);
         $('.messages').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},);
-      })
+      });
     })
     .fail(function() {
       console.log('エラー');
@@ -73,11 +75,12 @@ $(function(){
     }
   };
 
+
   var buildMessageHTML = function(message) {
       var messageBody = message.content ? message.content : '';
       var messageImage = message.image ? `<img src="${message.image}" class="lower-message__image">` : '';
       //data-idが反映されるようにしている
-      var html = `<div class="message" data-id=  ${message.id}  > 
+      var html = `<div class="message" data-id=${message.id}  > 
         <div class="upper-message">
           <div class="upper-message__user-name">
             ${message.user_name} 
