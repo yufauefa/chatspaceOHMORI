@@ -93,7 +93,9 @@ $(function(){
           <p class="lower-message__content"> 
             ${messageBody} 
           </p> 
+          <p class="lower-message__content"> 
             ${messageImage} 
+          </p> 
         </div>
         </div>`
       return html;
